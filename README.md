@@ -1,38 +1,48 @@
-# DevOps portflio
-This repository showcases my expertise in DevOps.   
-Highlighting various aspects of application packaging and containerization, Cloud knowledge, CI/CD.      
-It demonstrates my proficiency in Docker, including the use of Docker Compose, Docker networking, and Docker volumes across multiple programming languages, exemplified through GitHub Actions, for automating the build, test, and deployment processes. The repository also reflects my ability to deploy applications and manage them in cloud environments. Furthermore, it showcases my skills in monitoring applications to ensure their optimal performance.
+# DevOps Portfolio
+This repository showcases my expertise in DevOps, highlighting various aspects of application packaging, containerization, cloud knowledge, and CI/CD. It demonstrates my proficiency in Docker, including the use of Docker Compose, Docker networking, and Docker volumes across multiple programming languages. Examples of these skills are implemented through GitHub Actions for automating build, test, and deployment processes. The repository also reflects my ability to deploy applications and manage them in cloud environments, along with my skills in monitoring applications to ensure optimal performance.
 
-# Deploy Applications
-Container aplications: docker docker compose
-### Mongo + React + Node
-### Golang + MySQL + React + Nginx
-### Python + SQLAlchemy
-### Java
-### Wordpress
-### Microservices
+# Skills and Tools
++ **Skills:** CI/CD, Containerization, Infrastructure as Code, Monitoring, Automation, Cloud Computing, Scripting, Linux
++ **Tools:** Docker, Kubernetes, Terraform, Ansible, Jenkins, Prometheus, Grafana, AWS, GCP, Bash, Python
 
-# Cloud 
-step deploy apps cloudflare
-create intance by cloud console o terraform
-conecto by ssh with .pem key
-clone the repository
-configure domains
-cloudflare nginx proxy managent domains, subdomains, dns, SSL certificate
-for HTTPS conection
+# Projects
+All these applications run with Docker and Docker Compose:
+In apps folder ```./apps```
+- Mongo + React + Node
+- Typescript + Mongo
+- Golang + MySQL + React + Nginx
+- Python + SQLAlchemy
+<!-- - Java -->
+- WordPress
+- Pocketbase
+- Microservices with Python + React
+- Mail server
 
-# CI/CD
-configure github actions for continuos delivery, integration
+Need Docker and Docker Compose:
+- [Docker](https://www.digitalocean.com/community/tutorial-collections/how-to-install-and-use-docker)
+- [Docker Compose](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-compose-on-ubuntu-20-04)
 
-# Mail server
+# Cloud & Deploy
+Cloud knowledge with Google Cloud Platform and Amazon Web Services.
 
-# terraform
-Infrastructure as Code
+## Deployment Steps
+1. Create an instance using the cloud console or Terraform.
+2. Connect via SSH using a `.pem` key.
+3. Set up the application.
+4. Configure domains using Cloudflare.
+5. Manage domains, subdomains, DNS, and SSL certificates with Cloudflare NGINX Proxy Manager for HTTPS connections.
 
-# linux & bash
+### Terraform
+Infrastructure as Code examples are available in the Terraform folder.
 
-# monitor
-metrics server, service, container
-prometeus & grafana
+# Monitoring and Alerting
+Metrics for servers, services, and containers are collected using Prometheus and Grafana.
 
-# bash go & python automatitaion
+
+<!-- # Security
+Implementing security best practices, including vulnerability assessments and automated security tasks. -->
+
+# Contact Information
+Daniel Cardozo  
+Email: danicardozo@dc.uba.ar  
+Website: [https://south.software](https://south.software)
