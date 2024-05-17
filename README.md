@@ -38,6 +38,94 @@ Infrastructure as Code examples are available in the Terraform folder.
 # Monitoring and Alerting
 Metrics for servers, services, and containers are collected using Prometheus and Grafana.
 
+# Automatication
+### mysql backups
+
+```
+#!/bin/bash
+
+# Variables
+CONTAINER_NAME="mysql_container"
+BACKUP_PATH="./backups"
+DATE=$(date +%F_%T)
+BACKUP_FILE="$BACKUP_PATH/mysql_backup_$DATE.sql"
+
+# Create backup directory if it doesn't exist
+mkdir -p $BACKUP_PATH
+
+# Run the mysqldump command inside the container
+docker exec $CONTAINER_NAME /usr/bin/mysqldump -u root --password=root_password example_db > $BACKUP_FILE
+
+# Check if the command succeeded
+if [ $? -eq 0 ]; then
+  echo "Backup successful: $BACKUP_FILE"
+else
+  echo "Backup failed"
+fi
+```
+Make script executable
+```chmod +x backup.sh```
+Run
+```./backup.sh```
+### docker & docker-compose intalation
+```
+#!/bin/bash
+
+# This script installs Docker and Docker Compose on an Ubuntu system.
+
+# Update the package index
+sudo apt-get update -y
+
+# Install prerequisite packages
+sudo apt-get install -y \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    software-properties-common
+
+# Add Docker’s official GPG key
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+
+# Add the Docker APT repository
+sudo add-apt-repository \
+   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   $(lsb_release -cs) \
+   stable"
+
+# Update the package index again with the Docker repository
+sudo apt-get update -y
+
+# Install Docker CE
+sudo apt-get install -y docker-ce
+
+# Start Docker and enable it to start on boot
+sudo systemctl start docker
+sudo systemctl enable docker
+
+# Verify that Docker CE is installed correctly by running the hello-world image
+sudo docker run hello-world
+
+# Install Docker Compose
+sudo curl -L "https://github.com/docker/compose/releases/download/$(curl -s https://api.github.com/repos/docker/compose/releases/latest | grep tag_name | cut -d '"' -f 4)/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+
+# Apply executable permissions to the Docker Compose binary
+sudo chmod +x /usr/local/bin/docker-compose
+
+# Verify that Docker Compose is installed correctly
+docker-compose --version
+
+# Add the current user to the Docker group to run Docker without sudo
+sudo usermod -aG docker $USER
+
+# Print completion message
+echo "Docker and Docker Compose installation is complete."
+echo "You need to log out and log back in to apply the Docker group changes."
+```
+run 
+```
+chmod +x install_docker.sh
+./install_docker.sh
+```
 
 <!-- # Security
 Implementing security best practices, including vulnerability assessments and automated security tasks. -->
