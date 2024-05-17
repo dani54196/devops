@@ -7,7 +7,7 @@ It demonstrates my proficiency in Docker, including the use of Docker Compose, D
 Container aplications: docker docker compose
 ### Mongo + React + Node
 ### Golang + MySQL + React + Nginx
-### Python + SQLite
+### Python + SQLAlchemy
 ### Java
 ### Wordpress
 ### Microservices
@@ -29,7 +29,7 @@ configure github actions for continuos delivery, integration
 # terraform
 Infrastructure as Code
 
-# linux 
+# linux & bash
 
 # monitor
 metrics server, service, container
