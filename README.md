@@ -4,7 +4,9 @@ This repository showcases my expertise in DevOps, highlighting various aspects o
 # Skills and Tools
 + **Skills:** CI/CD, Containerization, Infrastructure as Code, Monitoring, Automation, Cloud Computing, Scripting, Linux
 + **Tools:** Docker, Kubernetes, Terraform, Ansible, Jenkins, Prometheus, Grafana, AWS, GCP, Bash, Python
-
+# Achievements
+- Reduced Deployment Time: Implemented CI/CD pipelines, reducing deployment time by 50%.
+- Reduced Cloud Costs: Optimized resource usage and implemented auto-scaling, reducing cloud costs by 30%.
 # Projects
 All these applications run with Docker and Docker Compose:
 In apps folder ```./apps```
