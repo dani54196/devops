@@ -1,136 +1,74 @@
 # DevOps Portfolio
-This repository showcases my expertise in DevOps, highlighting various aspects of application packaging, containerization, cloud knowledge, and CI/CD. It demonstrates my proficiency in Docker, including the use of Docker Compose, Docker networking, and Docker volumes across multiple programming languages. Examples of these skills are implemented through GitHub Actions for automating build, test, and deployment processes. The repository also reflects my ability to deploy applications and manage them in cloud environments, along with my skills in monitoring applications to ensure optimal performance.
+This repository showcases my expertise in DevOps, highlighting various aspects of application packaging, containerization, cloud knowledge, and CI/CD.   
+It demonstrates my proficiency in Docker, including the use of Docker Compose, Docker networking, and Docker volumes across multiple programming languages.   
+Examples of these skills are implemented through GitHub Actions for automating build, test, and deployment processes.   
+The repository also reflects my ability to deploy applications and manage them in cloud environments, along with my skills in monitoring applications to ensure optimal performance.
 
-# Skills and Tools
 + **Skills:** CI/CD, Containerization, Infrastructure as Code, Monitoring, Automation, Cloud Computing, Scripting, Linux
-+ **Tools:** Docker, Kubernetes, Terraform, Ansible, Jenkins, Prometheus, Grafana, AWS, GCP, Bash, Python
-# Achievements
-- Reduced Deployment Time: Implemented CI/CD pipelines, reducing deployment time by 50%.
-- Reduced Cloud Costs: Optimized resource usage and implemented auto-scaling, reducing cloud costs by 30%.
-# Projects
-All these applications run with Docker and Docker Compose:
-In apps folder ```./apps```
-- Mongo + React + Node
-- Typescript + Mongo
-- Golang + MySQL + React + Nginx
-- Python + SQLAlchemy
-<!-- - Java -->
-- WordPress
-- Pocketbase
-- Microservices with Python + React
-- Mail server
++ **Tools:** Docker, Kubernetes, Terraform, Ansible, Jenkins, Prometheus, Grafana, AWS, GCP, Bash, Python, Golang
 
-Need Docker and Docker Compose:
-- [Docker](https://www.digitalocean.com/community/tutorial-collections/how-to-install-and-use-docker)
-- [Docker Compose](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-compose-on-ubuntu-20-04)
+### Achievements
+- Reduced Deployment Time: Implemented CI/CD pipelines, reducing deployment time by 40%.
+- Reduced Cloud Costs: Optimized resource usage and implemented auto-scaling, reducing cloud costs by 25%.
 
-# Cloud & Deploy
-Cloud knowledge with Google Cloud Platform and Amazon Web Services.
+# Contents
+A table of contents linking to different sections of your repository.
+Projects Overview: A summary of the projects and examples included in the repository.
 
-## Deployment Steps
-1. Create an instance using the cloud console or Terraform.
-2. Connect via SSH using a `.pem` key.
-3. Set up the application.
-4. Configure domains using Cloudflare.
-5. Manage domains, subdomains, DNS, and SSL certificates with Cloudflare NGINX Proxy Manager for HTTPS connections.
+### Automation Scripts
+Include useful automation scripts for:
 
-### Terraform
-Infrastructure as Code examples are available in the Terraform folder.
+Backups
+Deployments
+Migrations
+Scaling resources
+[Automation Scripts](Automation-Scripts/readme.md)
 
-# Monitoring and Alerting
-Metrics for servers, services, and containers are collected using Prometheus and Grafana.
+### CI/CD Pipelines
+Include examples of CI/CD pipelines using different tools such as:
+GitHub Actions
+GitLab CI
+Jenkins
+CircleCI
+Show how you set up these pipelines to automate the testing, building, and deployment processes.
+[CI-CD](CI-CD/readme.md)
+### Containerization and Orchestration
+Showcase your skills in Docker and Kubernetes:
 
-# Automatication
-### mysql backups
+Docker: Dockerfiles and Docker Compose configurations for different applications.
+Kubernetes: YAML files for deploying applications, managing pods, services, and ingress configurations. Include Helm charts if possible.
+[Containerization-Orchestration](Containerization-Orchestration/readme.md)
 
-```
-#!/bin/bash
+### Infrastructure as Code (IaC)
+Provide examples of using IaC tools such as:
 
-# Variables
-CONTAINER_NAME="mysql_container"
-BACKUP_PATH="./backups"
-DATE=$(date +%F_%T)
-BACKUP_FILE="$BACKUP_PATH/mysql_backup_$DATE.sql"
+Terraform: Include sample configurations for setting up cloud infrastructure on AWS, GCP, or Azure.
+Ansible: Playbooks for automating server configuration.
+[IaC](IaC/readme.md)
+### Monitoring and Logging
+Demonstrate how you set up monitoring and logging for applications:
 
-# Create backup directory if it doesn't exist
-mkdir -p $BACKUP_PATH
+Prometheus and Grafana: Configuration files for monitoring applications and visualizing metrics.
+ELK Stack (Elasticsearch, Logstash, Kibana): Examples of log management and visualization.
+[Monitoring](Monitoring/readme.md)
+### Security Practices:
+Show how you implement security in your DevOps practices:
 
-# Run the mysqldump command inside the container
-docker exec $CONTAINER_NAME /usr/bin/mysqldump -u root --password=root_password example_db > $BACKUP_FILE
+Scripts for vulnerability scanning (e.g., using OWASP ZAP or similar tools).
+Best practices for securing cloud infrastructure and applications.
+Examples of automating security updates and patch management.
+[Security](Security/readme.md)
 
-# Check if the command succeeded
-if [ $? -eq 0 ]; then
-  echo "Backup successful: $BACKUP_FILE"
-else
-  echo "Backup failed"
-fi
-```
-Make script executable
-```chmod +x backup.sh```
-Run
-```./backup.sh```
-### docker & docker-compose intalation
-```
-#!/bin/bash
 
-# This script installs Docker and Docker Compose on an Ubuntu system.
+<!-- Provide a few complete example projects that demonstrate end-to-end deployment and management. For instance:
+A full-stack application using React, Node.js, and MongoDB, deployed on Kubernetes with CI/CD.
+A microservices architecture example with multiple services written in different languages (e.g., Golang, Java) orchestrated with Docker Compose or Kubernetes
+Documentation:
+Ensure each project and example is well-documented:
+Setup Instructions: Step-by-step guides on how to set up and deploy each project.
+Diagrams: Architecture diagrams illustrating the setup and flow of your deployments.
+Comments: Well-commented configuration files and scripts to explain their purpose and functionality. -->
 
-# Update the package index
-sudo apt-get update -y
-
-# Install prerequisite packages
-sudo apt-get install -y \
-    apt-transport-https \
-    ca-certificates \
-    curl \
-    software-properties-common
-
-# Add Docker’s official GPG key
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-
-# Add the Docker APT repository
-sudo add-apt-repository \
-   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
-   $(lsb_release -cs) \
-   stable"
-
-# Update the package index again with the Docker repository
-sudo apt-get update -y
-
-# Install Docker CE
-sudo apt-get install -y docker-ce
-
-# Start Docker and enable it to start on boot
-sudo systemctl start docker
-sudo systemctl enable docker
-
-# Verify that Docker CE is installed correctly by running the hello-world image
-sudo docker run hello-world
-
-# Install Docker Compose
-sudo curl -L "https://github.com/docker/compose/releases/download/$(curl -s https://api.github.com/repos/docker/compose/releases/latest | grep tag_name | cut -d '"' -f 4)/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-
-# Apply executable permissions to the Docker Compose binary
-sudo chmod +x /usr/local/bin/docker-compose
-
-# Verify that Docker Compose is installed correctly
-docker-compose --version
-
-# Add the current user to the Docker group to run Docker without sudo
-sudo usermod -aG docker $USER
-
-# Print completion message
-echo "Docker and Docker Compose installation is complete."
-echo "You need to log out and log back in to apply the Docker group changes."
-```
-run 
-```
-chmod +x install_docker.sh
-./install_docker.sh
-```
-
-<!-- # Security
-Implementing security best practices, including vulnerability assessments and automated security tasks. -->
 
 # Contact Information
 Daniel Cardozo  

@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  inventory:
+    build: .
+    command: uvicorn main:app --host 0.0.0.0 --port 80
+    volumes:
+      - .:/app
+    ports:
+      - 8000:80
+    depends_on:
+      - redis
+  payment:
+    build: .
+    command: uvicorn main:app --host
+    volumes:
+      - .:/app
+    ports:
+      - 8001:80
+    depends_on:
+      - redis
+  client:
+    build: .
+    command: npm start
+    volumes:
+      - .:/app
+    ports:
+      - 3000:3000
+  redis:
+    image: "redis:alpine"
+    ports:
+      - 6379:6379
