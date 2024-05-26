@@ -72,5 +72,5 @@ Comments: Well-commented configuration files and scripts to explain their purpos
 
 # Contact Information
 Daniel Cardozo  
-Email: danicardozo@dc.uba.ar  
-Website: [https://south.software](https://south.software)
+Email: [danicardozo@dc.uba.ar](mailto:danicardozo@dc.uba.ar)   
+Website: [south.software](https://south.software)
