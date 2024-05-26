@@ -47,6 +47,10 @@ Adds a tag to the instance for identification.
 5. VPC Security Group Association:
 Associates the instance with the created security group to manage access rules.
 
+
 # Cluster in GCP
+
+6. Check cluster
+```kubectl get pods```
 
 [EKS](./GKE/main.tf)

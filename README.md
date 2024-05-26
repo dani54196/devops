@@ -11,7 +11,7 @@ The repository also reflects my ability to deploy applications and manage them i
 - Reduced Deployment Time: Implemented CI/CD pipelines, reducing deployment time by 40%.
 - Reduced Cloud Costs: Optimized resource usage and implemented auto-scaling, reducing cloud costs by 25%.
 
-# Contents
+## Contents
 A table of contents linking to different sections of your repository.
 Projects Overview: A summary of the projects and examples included in the repository.
 
@@ -51,7 +51,8 @@ Show how you implement security in your DevOps practices:
 Scripts for vulnerability scanning (e.g., using OWASP ZAP or similar tools).
 Best practices for securing cloud infrastructure and applications.
 Examples of automating security updates and patch management.
-[Security](Security/readme.md)
+[Security](https://github.com/dani54196/security/blob/main/README.md)
+
 <!-- Provide a few complete example projects that demonstrate end-to-end deployment and management. For instance:
 A full-stack application using React, Node.js, and MongoDB, deployed on Kubernetes with CI/CD.
 A microservices architecture example with multiple services written in different languages (e.g., Golang, Java) orchestrated with Docker Compose or Kubernetes
@@ -60,6 +61,7 @@ Ensure each project and example is well-documented:
 Setup Instructions: Step-by-step guides on how to set up and deploy each project.
 Diagrams: Architecture diagrams illustrating the setup and flow of your deployments.
 Comments: Well-commented configuration files and scripts to explain their purpose and functionality. -->
+
 # Contact Information
 Daniel Cardozo  
 Email: [danicardozo@dc.uba.ar](mailto:danicardozo@dc.uba.ar)   
